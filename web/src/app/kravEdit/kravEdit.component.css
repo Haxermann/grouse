@@ -21,6 +21,7 @@
 
 .sidebar{
   display: flex;
+  /*height: 83%;*/
   height: 90%;
   width: 100%;
 }
@@ -40,26 +41,52 @@
   width: 350px;
 }
 .sidenav-content{
-  width: 60%;
-  padding-right: 20%;
-  padding-left: 20%;
+  /*width: 60%;*/
+  /*padding-right: 20%;*/
+  /*padding-left: 20%;*/
+  height: 100%;
+  width: 100%;
+  padding-left: 15%;
+
+}
+
+.Krav-card-div-row{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 }
 
 .Krav-card{
   margin-top: 5px;
-  height: 60%;
-  overflow: scroll;
+  /*height: 60%;*/
+  height: 100%;
+  overflow: scroll hidden;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 .Krav-card-edit{
   margin-top: 5px;
-  height: 25%;
+  /*height: 25%;*/
+  height: 40%;
+  width: 100%;
 }
-
-.Krav-status{
+/*
+.Krav-status-footer{
   display: flex;
   flex-wrap: nowrap;
-  width: 100%;
-  height: 55px;
+  width: auto;
+  height: 40px;
+  padding-bottom: 40px;
 }
+*/
+.Krav-status-right{
+  display: flex;
+  flex-wrap: wrap;
+  height: 150%;
+  width: 20%;
+  padding-top: 5px;
+}
+
+
 
