@@ -64,10 +64,22 @@
   width: 75%;
 }
 
+.Krav-options{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 20%;
+  margin: 5px;
+}
+
 .Krav-input{
   min-height: 100px;
   height: 100%;
   width: 100%;
+}
+
+.submit-button{
+  height: 40px;
 }
 
 .Krav-status{

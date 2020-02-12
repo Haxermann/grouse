@@ -97,8 +97,24 @@
           </mat-form-field>
         </mat-tab>
         <mat-tab label="Ny">
-          <p>test</p>
-          <button mat-raised-button>test</button>
+          <div class="flex-row-between">
+            <mat-form-field class="Krav-form">
+              <mat-label>Krav</mat-label>
+              <textarea class="Krav-input" matInput placeholder="Nytt krav"></textarea>
+            </mat-form-field>
+            <div class="Krav-options">
+              <mat-button-toggle-group>
+                <mat-button-toggle>O</mat-button-toggle>
+                <mat-button-toggle>1</mat-button-toggle>
+                <mat-button-toggle>2</mat-button-toggle>
+                <mat-button-toggle>O(i)</mat-button-toggle>
+                <mat-button-toggle>1(i)</mat-button-toggle>
+                <mat-button-toggle>2(i)</mat-button-toggle>
+              </mat-button-toggle-group>
+              <br>
+              <button mat-raised-button>Legg til krav</button>
+            </div>
+          </div>
         </mat-tab>
       </mat-tab-group>
     </mat-card>

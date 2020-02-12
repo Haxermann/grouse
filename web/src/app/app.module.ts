@@ -23,6 +23,7 @@ import {kravEditComponent} from './kravEdit/kravEdit.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTreeModule} from '@angular/material/tree';
 import {userEditComponent} from './UserEdit/userEdit.component';
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import {userEditComponent} from './UserEdit/userEdit.component';
     MatCheckboxModule,
     MatSidenavModule,
     MatTreeModule,
-    MatTabsModule
+    MatTabsModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent],
