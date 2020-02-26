@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Bekreft sletting</h1>
+<div mat-dialog-content>
+  <p>Er du sikker på at du vil slette dette Prosjektet? Denne handlingen kan ikke angres!!</p>
+</div>
+<div mat-dialog-actions class="flex-row-evenlyer">
+  <button mat-raised-button (click)="onNoClick()">Avbryt</button>
+  <button mat-raised-button color="warn" [mat-dialog-close]="data">Slett</button>
+</div>

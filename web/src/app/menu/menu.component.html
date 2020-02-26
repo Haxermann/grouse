@@ -1,4 +1,4 @@
-<mat-toolbar class="flex-row-between" color="primary" style="padding: 0">
+<mat-toolbar class="flex-row-between" [ngClass]="{'mat-primary' : !removalMode, 'mat-warn' : removalMode}" style="padding: 0">
   <button mat-button>
     <div class="flex-row-left">
       <div class="flex-row-evenlyer">
@@ -33,16 +33,21 @@
     </div>
   </div>
 </mat-toolbar>
-<div class="flex-row-left mal-container">
-  <button mat-raised-button class="flex-column flex-center mal-card" (click)="newProject()">
-    <i class="material-icons">add_circle_outline</i>
-    <p>Nytt Prosjekt</p>
-  </button>
-  <button mat-raised-button class="mal-card" *ngFor="let project of projects" (click)="openProject(project)">
-    <div class="flex-column-squish">
-      <h3>{{project.organisationName}}</h3>
-      <p>{{project.projectName}}</p>
-      <h6>Last Viewed: {{project.changedDate.split('-')[2].split('T')[0]}}.{{project.changedDate.split('-')[1]}}.{{project.changedDate.split('-')[0]}}</h6>
-    </div>
-  </button>
+<div id="menu" class="menu-container">
+  <div class="flex-row-left mal-container">
+    <button mat-raised-button class="flex-column flex-center mal-card" (click)="newProject()">
+      <i class="material-icons">add_circle_outline</i>
+      <p>Nytt Prosjekt</p>
+    </button>
+    <button mat-raised-button [disabled]="removalMode && project.ownedBy !== userData.userName" class="mal-card" *ngFor="let project of projects" (click)="openProject(project)">
+      <div class="flex-column-squish">
+        <h3>{{project.organisationName}}</h3>
+        <p>{{project.projectName}}</p>
+        <h6>Last Viewed: {{project.changedDate.split('-')[2].split('T')[0]}}.{{project.changedDate.split('-')[1]}}.{{project.changedDate.split('-')[0]}}</h6>
+      </div>
+    </button>
+  </div>
+  <div class="flex-row-right">
+    <button color="warn" mat-raised-button (click)="removeToggle()" class="Krav-options-button"><i class="material-icons">delete_forever</i></button>
+  </div>
 </div>

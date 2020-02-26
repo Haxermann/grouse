@@ -11,7 +11,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import {MenuComponent, NewProjectDialog} from './menu/menu.component';
+import {MenuComponent, NewProjectDialog, DeleteProjectDialog} from './menu/menu.component';
 import {AppComponent} from './app.component';
 import {Data} from './data.service';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -34,7 +34,8 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
     NewProjectDialog,
     GDPRContent,
     userEditComponent,
-    DeleteRequirmentDialog
+    DeleteRequirmentDialog,
+    DeleteProjectDialog
   ],
     imports: [
         BrowserModule,
@@ -60,19 +61,22 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
         MatSidenavModule,
         MatTreeModule,
         MatTabsModule,
-        MatButtonToggleModule
+        MatButtonToggleModule,
+        MatTableModule
     ],
   providers: [],
   bootstrap: [AppComponent],
   exports: [
     NewProjectDialog,
     GDPRContent,
-    DeleteRequirmentDialog
+    DeleteRequirmentDialog,
+    DeleteProjectDialog
   ],
   entryComponents: [
     NewProjectDialog,
     GDPRContent,
-    DeleteRequirmentDialog
+    DeleteRequirmentDialog,
+    DeleteProjectDialog
   ]
 })
 export class AppModule { }
