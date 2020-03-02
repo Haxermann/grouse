@@ -39,7 +39,7 @@
       <i class="material-icons">add_circle_outline</i>
       <p>Nytt Prosjekt</p>
     </button>
-    <button mat-raised-button [disabled]="removalMode && project.ownedBy !== userData.userName" class="mal-card" *ngFor="let project of projects" (click)="openProject(project)">
+    <button mat-raised-button [disabled]="removalMode && project.ownedBy !== userData.userName" class="mal-card" *ngFor="let project of projects" (click)="selectProject(project)">
       <div class="flex-column-squish">
         <h3>{{project.organisationName}}</h3>
         <p>{{project.projectName}}</p>

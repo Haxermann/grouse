@@ -117,31 +117,40 @@ export class MenuComponent implements OnInit {
     });
   }
 
-  openProject(project) {
+  //Checks if you want to delete or open the selected project
+  selectProject(project) {
     if (!this.removalMode) {
-      this.userData.currentProject = project;
-      this.userData.nav = 'kravEdit';
-      localStorage.setItem('UserData', JSON.stringify(this.userData));
-      this.router.navigate(['/kravEdit']);
-    }else{
-      const dialogref = this.dialogBox.open(DeleteProjectDialog, {
-        width: '300px'
-      })
-      dialogref.afterClosed().subscribe(result => {
-        if (result){
-          this.http.delete(
-            project._links.self.href,
-            {
-              headers: new HttpHeaders({
-                Authorization: 'Bearer ' + this.userData.oauthClientSecret
-              })
-            }).subscribe(
-            result => {
-              console.log(result);
-            }, error => console.error(error));
-        }
-      });
+      this.openProject(project);
+    }else {
+      this.deleteProject(project);
     }
+  }
+
+  deleteProject(project){
+    const dialogref = this.dialogBox.open(DeleteProjectDialog, {
+      width: '300px'
+    })
+    dialogref.afterClosed().subscribe(result => {
+      if (result){
+        this.http.delete(
+          project._links.self.href,
+          {
+            headers: new HttpHeaders({
+              Authorization: 'Bearer ' + this.userData.oauthClientSecret
+            })
+          }).subscribe(
+          result => {
+            console.log(result);
+          }, error => console.error(error));
+      }
+    });
+  }
+
+  openProject(project) {
+    this.userData.currentProject = project;
+    this.userData.nav = 'kravEdit';
+    localStorage.setItem('UserData', JSON.stringify(this.userData));
+    this.router.navigate(['/kravEdit']);
   }
 
   enterUserEdit() {
