@@ -117,7 +117,12 @@ export class MenuComponent implements OnInit {
     });
   }
 
-  //Checks if you want to delete or open the selected project
+  /**
+   * Checks if you want to delete or open the selected project
+   *
+   * @param project
+   * The selecteed project
+   */
   selectProject(project) {
     if (!this.removalMode) {
       this.openProject(project);
