@@ -46,6 +46,10 @@
         <h6>Last Viewed: {{project.changedDate.split('-')[2].split('T')[0]}}.{{project.changedDate.split('-')[1]}}.{{project.changedDate.split('-')[0]}}</h6>
       </div>
     </button>
+    <button mat-raised-button class="flex-column flex-center mal-card" [ngClass]="{'mat-primary' : removalMode, 'mat-warn' : !removalMode}" (click)="removeToggle()">
+      <i class="material-icons">delete_forever</i>
+      <p>Slett et prosjekt</p>
+    </button>
   </div>
   <div class="flex-row-right">
     <button color="warn" mat-raised-button (click)="removeToggle()" class="Krav-options-button"><i class="material-icons">delete_forever</i></button>
@@ -53,5 +57,5 @@
 </div>
 <footer class="footer fixed-bottom">
   <div class="KDRS-logo"></div>
-  <p>© 2020 Copyright: KDRS</p>
+  <p>Grouse er utviklet av KDRS</p>
 </footer>
