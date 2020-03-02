@@ -16,7 +16,7 @@
   </div>
   <div class="flex-row-right">
     <div class="flex-row-between">
-      <button mat-button>
+      <button mat-button (click)="enterUserEdit()">
         <div class="flex-row-between">
           <div class="flex-center">
             <i class="material-icons flex-center navbar-icon icon-large">account_box</i>
@@ -139,7 +139,7 @@
       </mat-card>
     </div>
     <!--The progress bar that shows the users progress-->
-    <div class="status-bar flex-column p-10">
+    <div class="status-bar flex-column p-lr-10">
       <mat-card>
         <!--Header shows the current position-->
         <mat-card-header>

@@ -107,6 +107,11 @@
   padding: 20px;
 }
 
+.p-lr-10{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .m-lr-10{
   margin-left: 10px;
   margin-right: 10px;

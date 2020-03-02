@@ -34,3 +34,4 @@ export function convertFromLegacy(links: legacyLink) {
 
   return ret;
 }
+

@@ -73,6 +73,7 @@
 }
 .Krav-input{
   min-height: 175px;
+  max-height: 175px;
   height: 100%;
   width: 100%;
 }
@@ -93,7 +94,6 @@
 }
 
 .status-bar{
-  height: 100%;
   width: 240px;
 }
 

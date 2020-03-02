@@ -398,6 +398,13 @@ export class kravEditComponent implements OnInit {
   }
 
   hasChild = (_: number, node: Requirment) => !!node.children && node.children.length > 0;
+
+  enterUserEdit() {
+    this.userData.nav = 'userEdit';
+    localStorage.setItem('UserData', JSON.stringify(this.userData));
+    this.router.navigate(['/userEdit']);
+  }
+
 }
 
 // Needed for tree structure
@@ -457,3 +464,4 @@ export class DeleteRequirmentDialog {
     this.dialogRef.close();
   }
 }
+
