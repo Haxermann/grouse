@@ -74,7 +74,7 @@
       </mat-nested-tree-node>
     </mat-tree>
   </mat-sidenav>
-  <mat-sidenav-content class="sidenav-content flex-row">
+  <mat-sidenav-content class="sidenav-content">
     <div class="edit-column">
       <mat-card class="Krav-card-edit">
         <!--Edit part (with the tabs and the text fields)-->
@@ -101,7 +101,7 @@
               </div>
             </div>
           </mat-tab>
-          <!--New Requirment-->
+          <!--New Requirement-->
           <mat-tab label="Ny">
             <div class="flex-column">
               <mat-form-field class="Krav-form">
@@ -128,20 +128,26 @@
         <mat-card-header>
           <h2>{{currentReq.title}}</h2>
         </mat-card-header>
-        <mat-card-content>
-          <h4>Beskrivelse</h4>
-          <div>{{currentReq.description}}</div>
-          <h4>Forklaring</h4>
-          <div>{{currentReq.explanation}}</div>
-          <h4>Konsekvens</h4>
-          <div>{{currentReq.consequence}}</div>
+        <mat-card-content >
+          <div *ngIf="currentReq.description !== ''">
+            <h4>Beskrivelse</h4>
+            <div>{{currentReq.description}}</div>
+          </div>
+          <div *ngIf="currentReq.explanation !== ''">
+            <h4>Forklaring</h4>
+            <div>{{currentReq.explanation}}</div>
+          </div>
+          <div *ngIf="currentReq.consequence !== ''">
+            <h4>Konsekvens</h4>
+            <div>{{currentReq.consequence}}</div>
+          </div>
         </mat-card-content>
       </mat-card>
     </div>
     <!--The progress bar that shows the users progress-->
-    <div class="status-bar flex-column p-10">
+    <div class="status-bar p-10">
       <mat-card>
-        <!--Actions for movment, goes forwards and backwards also aproves the current requirment-->
+        <!--Actions for movement, goes forwards and backwards also approves the current requirement-->
         <mat-card-actions class="nav flex-row">
           <button mat-raised-button color="primary" (click)="previousReq()">
             <i class="material-icons">arrow_left</i>
@@ -156,7 +162,7 @@
         <!--Status indicator for how far along you are-->
         <mat-card-content>
           <div class="flex-center">
-            <div class="flex-column flex-center status-bar-button-container">
+            <div class="flex-center status-bar-button-container">
               <div *ngFor="let req of this.statusbarData">
                 <button mat-raised-button matTooltip="{{req.title}}" (click)="changeReq(req.projectFunctionalityId)" [ngClass]="{
                   'mat-accent big-button' : this.currentReq.projectFunctionalityId === req.projectFunctionalityId,

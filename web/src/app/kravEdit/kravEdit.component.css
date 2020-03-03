@@ -46,7 +46,8 @@
 
 .Krav-card{
   margin-top: 5px;
-  height: 38%;
+  height: 420px;
+  width: 50%;
   overflow: scroll;
   overflow-x: hidden;
 }
@@ -55,9 +56,8 @@
   display: flex;
   flex-direction: column;
   margin-top: 5px;
-  height: 55%;
-  padding-bottom: 0px;
-  padding-top: 0px;
+  height: 420px;
+  width: 50%;
 }
 
 .Krav-form{
@@ -72,7 +72,8 @@
   height: 100%;
 }
 .Krav-input{
-  min-height: 175px;
+  min-height: 270px;
+  max-height: 270px;
   height: 100%;
   width: 100%;
 }
@@ -89,13 +90,17 @@
 }
 
 .edit-column{
+  display: flex;
+  flex-direction: row;
   width: 80%;
-  max-width: 800px;
+  justify-content: space-evenly;
+  padding: 10px;
 }
 
 .status-bar{
-  height: 100%;
-  width: 240px;
+  height: 15%;
+  width: 80%;
+  padding-top: 0px;
 }
 
 ::ng-deep.mat-tab-label, ::ng-deep.mat-tab-label-active{
@@ -108,8 +113,10 @@
 }
 
 .status-bar-button-container{
-  height: 500px !important;
-  width: 10px;
+  display: flex;
+  flex-direction: row;
+  height: 15% !important;
+  width: 80%;
 }
 
 .color-success{
